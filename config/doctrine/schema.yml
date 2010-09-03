@@ -229,6 +229,8 @@ AdminUser:
     id: { type: integer(4), primary: true, autoincrement: true, comment: "Serial number" }
     username: { type: string(64), default: "", notnull: true, comment: "Administrator''s username" }
     password: { type: string(40), default: "", notnull: true, comment: "Administrator''s password" }
+    role: { type: string(32), default: "master", notnull: true, comment: "Administrator''s role" }
+
   indexes:
     username_UNIQUE:
       fields: [username]

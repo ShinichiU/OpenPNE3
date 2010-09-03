@@ -3,3 +3,4 @@ AdminUser:
     id: ~
     username: "admin"
     password: "password"
+    role: "master"
