@@ -1,0 +1,23 @@
+box: wercker/php
+services:
+  - wercker/mysql
+build:
+  steps:
+    - script:
+        name: Activate PHP 5.6
+        code: phpenv global 5.6
+    - script:
+        name: install OpenPNE
+        code: |
+          cat config/OpenPNE.yml.sample |sed -e "s/example\.com/0.0.0.0/g" > config/OpenPNE.yml
+          cp config/ProjectConfiguration.class.php.sample config/ProjectConfiguration.class.php
+          php symfony openpne:fast-install --dbms=mysql --dbhost="$WERCKER_MYSQL_HOST" --dbport="$WERCKER_MYSQL_PORT" --dbuser="$WERCKER_MYSQL_USERNAME" --dbpassword="$WERCKER_MYSQL_PASSWORD" --dbname="WERCKER_MYSQL_DATABASE" -q
+    - script:
+        name: echo PHP information
+        code: |-
+            php -v
+            php -i
+    - script:
+        name: PHPUnit integration tests
+        code: |-
+            php  test/unit/helper/opUtilHelperTest.php 
