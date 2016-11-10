@@ -11,6 +11,7 @@ build:
     - script:
         name: install OpenPNE
         code: |
+          echo $WERCKER_MYSQL_USERNAME $WERCKER_MYSQL_PORT WERCKER_MYSQL_USERNAME
           cat config/OpenPNE.yml.sample |sed -e "s/example\.com/0.0.0.0/g" > config/OpenPNE.yml
           cp config/ProjectConfiguration.class.php.sample config/ProjectConfiguration.class.php
           php symfony openpne:fast-install --dbms=mysql --dbhost="$WERCKER_MYSQL_HOST" --dbport="$WERCKER_MYSQL_PORT" --dbuser="$WERCKER_MYSQL_USERNAME" --dbpassword="$WERCKER_MYSQL_PASSWORD" --dbname="WERCKER_MYSQL_DATABASE"
