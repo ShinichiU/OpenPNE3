@@ -3,6 +3,8 @@ services:
   - mysql
 build:
   steps:
+    - install-lackages:
+      packages: php5-mysql php5-gd
     - script:
         name: echo PHP information
         code: |-
