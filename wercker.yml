@@ -8,16 +8,12 @@ build:
     - script:
         name: Activate PHP 5.6
         code: |
-          php -v
-          mkdir tmp
-          cd tmp
-          git clone https://github.com/CHH/phpenv.git
-          cd phpenv/bin
-          ./phpenv-install.sh
+          git clone https://github.com/CHH/phpenv.git /tmp/phpenv
+          /tmp/phpenv/bin/phpenv-install.sh
           export PATH="~/.phpenv/bin:$PATH"
-          eval "$(phpenv init -)"
-          phpenv install 5.6.27
-          phpenv global 5.6.27
+          eval "$(~/phpenv init -)"
+          ~/phpenv install 5.6.27
+          ~/phpenv global 5.6.27
     - script:
         name: install OpenPNE
         code: |
