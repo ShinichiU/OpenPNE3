@@ -8,14 +8,15 @@ build:
     - script:
         name: echo PHP information
         code: |-
-            /usr/bin/php -i
+            php -v
+            php -i
     - script:
         name: install OpenPNE
         code: |
           cat config/OpenPNE.yml.sample |sed -e "s/example\.com/0.0.0.0/g" > config/OpenPNE.yml
           cp config/ProjectConfiguration.class.php.sample config/ProjectConfiguration.class.php
-          /usr/bin/php symfony openpne:fast-install --dbms=mysql --dbhost="localhost" --dbuser="root" --dbname="openpne3"
+          php symfony openpne:fast-install --dbms=mysql --dbhost="localhost" --dbuser="root" --dbname="openpne3"
     - script:
         name: PHPUnit integration tests
         code: |-
-            /usr/bin/php  test/unit/helper/opUtilHelperTest.php 
+            php  test/unit/helper/opUtilHelperTest.php 
