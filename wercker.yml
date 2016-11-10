@@ -6,6 +6,7 @@ build:
     - script:
         name: Activate PHP 5.6
         code: |
+          php -v
           mkdir tmp
           cd tmp
           git clone https://github.com/CHH/phpenv.git
