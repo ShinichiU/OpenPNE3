@@ -4,7 +4,7 @@ services:
 build:
   steps:
     - install-packages:
-      packages: php5-mysql php5-gd
+      packages: php5-pdo php5-mysql php5-gd
     - script:
         name: echo PHP information
         code: |-
