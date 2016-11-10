@@ -1,19 +1,8 @@
-box: php
+box: php:5.6
 services:
   - mysql
 build:
   steps:
-    - install-packages:
-      packages: git
-    - script:
-        name: Activate PHP 5.6
-        code: |
-          git clone https://github.com/CHH/phpenv.git ~/phpenv
-          ~/phpenv/bin/phpenv-install.sh
-          export PATH="~/.phpenv/bin:$PATH"
-          eval "$(~/.phpenv/bin/phpenv init -)"
-          ~/.phpenv/bin/phpenv install 5.6.27
-          ~/.phpenv/bin/phpenv global 5.6.27
     - script:
         name: install OpenPNE
         code: |
