@@ -1,6 +1,6 @@
 box: php
 services:
-  - wercker/mysql
+  - mysql
 build:
   steps:
     - script:
