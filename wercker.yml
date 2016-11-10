@@ -3,7 +3,7 @@ services:
   - mysql
 build:
   steps:
-    - install-lackages:
+    - install-packages:
       packages: git
     - script:
         name: Activate PHP 5.6
