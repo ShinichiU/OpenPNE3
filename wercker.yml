@@ -9,11 +9,16 @@ build:
         code: service mysql start
         code: git clone --depth=1 git://github.com/upsilon/opIgnoreKnownErrorsPlugin.git plugins/opIgnoreKnownErrorsPlugin
     - script:
+        name: server info
+        code: |
+          service mysql status
+          php -i
+    - script:
         name: install OpenPNE
         code: |
           cp config/ProjectConfiguration.class.php{.sample,}
           cp config/OpenPNE.yml{.sample,}
-          php symfony openpne:fast-install --dbms=mysql --dbhost="localhost" --dbuser="root" --dbname="openpne3"
+          php symfony openpne:fast-install --dbms=mysql --dbhost="localhost" --dbuser="root" --dbname="openpne3" --dbsock="/var/run/mysqld/mysqld.sock"
     - script:
         name: PHPUnit integration tests
         code: |-
