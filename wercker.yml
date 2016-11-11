@@ -7,7 +7,7 @@ build:
     - script:
         name: pre settings
         code: service mysql start
-        code: git clone --depth=0 git://github.com/upsilon/opIgnoreKnownErrorsPlugin.git plugins/opIgnoreKnownErrorsPlugin
+        code: git clone --depth=1 git://github.com/upsilon/opIgnoreKnownErrorsPlugin.git plugins/opIgnoreKnownErrorsPlugin
     - script:
         name: install OpenPNE
         code: |
