@@ -7,7 +7,7 @@ build:
       packages: php5-common php5-mysql php5-gd
     - script:
         name: install pecl pdo_mysql
-        code: sudo $HOME/.phpenv/shims/pecl install -f pdo_mysql
+        code: pecl install -f pdo_mysql
     - script:
         name: echo PHP information
         code: |-
