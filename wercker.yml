@@ -3,6 +3,9 @@ services:
   - mysql
 build:
   steps:
+    - script:
+        name: apt-get update
+        code: sudo apt-get update
     - install-packages:
       packages: autoconf build-dep libmysqlclient-dev php5-common php5-mysql php5-gd
     - script:
