@@ -6,8 +6,9 @@ build:
       packages: git
     - script:
         name: pre settings
-        code: service mysql start
-        code: git clone --depth=1 git://github.com/upsilon/opIgnoreKnownErrorsPlugin.git plugins/opIgnoreKnownErrorsPlugin
+        code: |
+          git clone --depth=1 git://github.com/upsilon/opIgnoreKnownErrorsPlugin.git plugins/opIgnoreKnownErrorsPlugin
+          service mysql start
     - script:
         name: server info
         code: |
