@@ -13,6 +13,7 @@ build:
         code: |-
             php -v
             php -i
+            find / -name mysql_config
     - script:
         name: install OpenPNE
         code: |
