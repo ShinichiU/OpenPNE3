@@ -4,7 +4,7 @@ services:
 build:
   steps:
     - install-packages:
-      packages: php5-common php5-mysql php5-gd
+      packages: php5-common php5-mysql php5-gd libmysqlclient-dev
     - script:
         name: install pecl pdo_mysql
         code: pecl install -f pdo_mysql
