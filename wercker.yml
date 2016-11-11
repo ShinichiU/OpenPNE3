@@ -23,4 +23,4 @@ build:
     - script:
         name: PHPUnit integration tests
         code: |-
-            php  test/unit/helper/opUtilHelperTest.php 
+          ./phpunit.phar test/phpunit/
